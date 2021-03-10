@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+num = int(input("Enter size: "))
+img = np.ones( (num,num,3) )
+img[::2,:,1] = 0
+img[1::2,:,0] = 0
+
+file= str(num)+"stripes.png"
+
+print("Enter output file: ",file)
+
+
+plt.imshow(img)
+plt.show()
+
+plt.imsave("'file'.png",img)
