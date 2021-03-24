@@ -1,0 +1,19 @@
+#Name: Fratchelya Fergie Ciputra
+#Email: Prefered email Fratchelyaciputra21@mhshs.org
+#Date: March 24 2021
+#Program #30:  Volcanic Elevations 
+
+import pandas as pd
+
+infile = input("Enter file name: ")
+vol = pd.read_csv(infile)
+
+print("The average height per rock type is as follows:")
+
+rock = vol.groupby('Dominant Rock Type')
+print(rock['Elevation (Meters)'].mean())
+
+country = vol.groupby('Country')
+italy = country.get_group('Italy')
+
+print("The talest volcano in Italy is", italy['Elevations= (Meters)'].max(), "meters high.")
